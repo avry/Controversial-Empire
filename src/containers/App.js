@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from '../images/logo.svg';
 import theteam from '../images/theteam.jpg';
 import './App.css';
+import { Button } from 'reactstrap';
+
 
 class App extends Component {
   render() {
@@ -13,6 +15,7 @@ class App extends Component {
         <p className="App-intro">
           This is Controversial Empire, a homie g Dawg production work  
         </p>
+        <Button color="primary">random button</Button>{' '}
       </div>
     );
   }
