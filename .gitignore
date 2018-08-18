@@ -25,4 +25,4 @@ yarn-error.log*
 staticfiles/
 
 #ignore db
-db.sqlite3
+/db.sqlite3

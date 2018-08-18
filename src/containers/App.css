@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #2ECC40;
 }
 
 .App-team-picture {
@@ -8,7 +9,7 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #3D9970;
   height: 280px;
   padding: 20px;
   color: white;

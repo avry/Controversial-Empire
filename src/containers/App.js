@@ -3,6 +3,7 @@ import logo from '../images/logo.svg';
 import theteam from '../images/theteam.jpg';
 import './App.css';
 import { Button } from 'reactstrap';
+import Example from './TestCard';
 
 
 class App extends Component {
@@ -16,6 +17,7 @@ class App extends Component {
           This is Controversial Empire, a homie g Dawg production work  
         </p>
         <Button color="primary">random button</Button>{' '}
+        <Example />
       </div>
     );
   }
