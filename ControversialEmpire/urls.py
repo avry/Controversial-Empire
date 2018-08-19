@@ -18,11 +18,20 @@ from django.contrib.auth.models import User
 from django.urls import path, re_path, include
 from django.views.generic import TemplateView
 from rest_framework import routers, serializers, viewsets
+from StableOutline.api import views
+
+
+router = routers.DefaultRouter()
+router.register(r'users', views.UserViewSet)
+router.register(r'groups', views.GroupViewSet)
 
 
 urlpatterns = [
   path('admin/', admin.site.urls),
   # path('api/', include('StableOutline.urls')),
+  path('', include(router.urls)),
   re_path('.*', TemplateView.as_view(template_name='index.html')),
-  path('api-auth/', include('rest_framework.urls')),
+  path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+
+
 ]
