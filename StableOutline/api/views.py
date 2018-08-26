@@ -1,9 +1,14 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 
 # Create your views here.
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 from .serializers import UserSerializer, GroupSerializer
+
+def google(request):
+    html = "google-site-verification: googlee928d1f5ff907fe2.html" 
+    return HttpResponse(html)
 
 
 class UserViewSet(viewsets.ModelViewSet):
