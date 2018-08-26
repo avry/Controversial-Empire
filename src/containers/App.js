@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Nav from './Nav';
+import Navigator from './Nav';
 import MainArea from './MainArea';
 import Header from './Header';
 
@@ -13,7 +13,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Nav />
+        <Navigator />
         <img src={ logo } style={{ height: "200px", width: "300px", display: "block", marginLeft: "auto", marginRight: "auto"}}/>
         <MainArea />
       </div>

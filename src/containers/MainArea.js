@@ -5,6 +5,9 @@ import './MainArea.css'
 
 import universe from '../images/universe.jpg';
 import cinema from '../images/cinema.jpg';
+import bigrock from '../images/bigrock.jpg';
+import bridge from '../images/bridge.jpg';
+import pinkskies from '../images/pinkskies.jpg';
 
 
 class MainArea extends Component {
@@ -13,13 +16,13 @@ class MainArea extends Component {
 		this.state = {
 			people: [
 				{
-					imagesrc: universe,
+					imagesrc: pinkskies,
 					name: "Mooder and the infinite possibilities",
 					company: "Theresa Lo",
 					description: "An intensive review in the field"
 				},
 				{
-					imagesrc: universe,
+					imagesrc: bridge,
 					name: "5 tips for using Mooder",
 					company: "Aaron Tan",
 					description: "An in-depth exploration of best practises "
@@ -31,7 +34,7 @@ class MainArea extends Component {
 					description: "Special promotion runs until end of August"
 				},
 				{
-					imagesrc: cinema,
+					imagesrc: bigrock,
 					name: "What a new wave in black label society means",
 					company: "WSir Dingaling-ling",
 					description: "Making the little things matter"
