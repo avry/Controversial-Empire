@@ -29,8 +29,9 @@ router.register(r'groups', views.GroupViewSet)
 urlpatterns = [
   path('admin/', admin.site.urls),
   # path('api/', include('StableOutline.urls')),
-  path('', include(router.urls)),
+  
   re_path('.*', TemplateView.as_view(template_name='index.html')),
+  path('', include(router.urls)),
   path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 
 
