@@ -3,7 +3,6 @@ import Slider from './Carousel';
 import { Container, Row, Col } from 'reactstrap';
 
 
-
 class Header extends Component {
   constructor(props) {
   	super(props);

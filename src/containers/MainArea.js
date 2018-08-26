@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import PeopleCard from './PeopleCard';
+import './MainArea.css'
+
+import universe from '../images/universe.jpg';
+import cinema from '../images/cinema.jpg';
+
 
 class MainArea extends Component {
 	constructor() {
@@ -8,19 +13,34 @@ class MainArea extends Component {
 		this.state = {
 			people: [
 				{
-					name: "David Davidson",
-					company: "Some Company, Inc",
-					description: "Met at a party"
+					imagesrc: universe,
+					name: "Mooder and the infinite possibilities",
+					company: "Theresa Lo",
+					description: "An intensive review in the field"
 				},
 				{
-					name: "Marki Markipliers",
-					company: "Some Company, Inc",
-					description: "Met at a party"
+					imagesrc: universe,
+					name: "5 tips for using Mooder",
+					company: "Aaron Tan",
+					description: "An in-depth exploration of best practises "
 				},
 				{
-					name: "Jehovah Witness",
-					company: "Some Company, Inc",
-					description: "Met at a party"
+					imagesrc: universe,
+					name: "Year end sale!",
+					company: "Witness Me",
+					description: "Special promotion runs until end of August"
+				},
+				{
+					imagesrc: cinema,
+					name: "What a new wave in black label society means",
+					company: "WSir Dingaling-ling",
+					description: "Making the little things matter"
+				},
+				{
+					imagesrc: cinema,
+					name: "What a new wave in black label society means",
+					company: "WSir Dingaling-ling",
+					description: "Making the little things matter"
 				}
 			]
 		}
@@ -28,7 +48,7 @@ class MainArea extends Component {
 	render () {
 		let peopleCards = this.state.people.map(person => {
 			return (
-				<Col sm="4">
+				<Col sm="4" className="individual-cards">
 					<PeopleCard person={person} />
 				</Col>
 			)
@@ -36,8 +56,32 @@ class MainArea extends Component {
 		return (
 			<Container fluid>
 				<Row>
-					{peopleCards}
+					<div className="about-text">
+						<h2>What is Mooder?</h2>
+						<p>Mooder can be whatever you want it to be.
+						It is a dream of life, the essence of meaning, it gives
+						what nothing else can give, life itself. Long live the hand.
+						Hands are good for you, they can hold stuff. Really good at grabbing stuff.Mooder can be whatever you want it to be.
+						It is a dream of life, the essence of meaning, it gives
+						what nothing else can give, life itself. Long live the hand.
+						Hands are good for you, they can hold stuff. Really good at grabbing stuff.Mooder can be whatever you want it to be.
+						It is a dream of life, the essence of meaning, it gives
+						what nothing else can give, life itself. Long live the hand.
+						Hands are good for you, they can hold stuff. Really good at grabbing stuff.
+						</p>
+						<p>
+							Our history begins in 1887, when the two parties were at war. War engulfed
+							all of the lands, but within the war, beauty was also created.
+							Mooder was created to provide a service to something.
+						</p>
+					</div>
 				</Row>
+				<div className="cards-list">
+
+					<Row>
+						{peopleCards}
+					</Row>
+				</div>
 			</Container>
 		)
 	}

@@ -8,25 +8,25 @@ import {
 } from 'reactstrap';
 
 import article from '../images/article1.jpg';
-import cinema from '../images/cinema.jpg';
-import universe from '../images/universe.jpg';
+import hampi from '../images/hampi.jpg';
+import folk from '../images/folk.jpg';
 import './colorscheme.css';
 
 const items = [
   {
     src: article,
     altText: 'Slide 1',
-    caption: 'Slide 1'
+    caption: 'Searching for answers?'
   },
   {
-    src: universe,
+    src: hampi,
     altText: 'Slide 2',
-    caption: 'Slide 2'
+    caption: 'What are you thinking of?'
   },
   {
-    src: cinema,
+    src: folk,
     altText: 'Slide 3',
-    caption: 'Slide 3'
+    caption: 'Come here often?'
   }
 ];
 
@@ -77,7 +77,7 @@ class Sliders extends Component {
           key={item.src}
         >
           <img src={item.src} alt={item.altText} style={{ height: "400px", width: "800px", display: "block", marginLeft: "auto", marginRight: "auto" }}/>
-          <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
+          <CarouselCaption captionHeader={item.caption} />
         </CarouselItem>
       );
     });
