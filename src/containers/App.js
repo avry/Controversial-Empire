@@ -1,21 +1,14 @@
-import React, { Component } from 'react';
-import Navigator from './Nav';
-import MainArea from './MainArea';
-import Header from './Header';
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
+import DataProvider from "./DataProvider";
+import Table from "./Table";
 
-import model3 from '../images/model3.jpg';
-import logo from '../images/logo.png';
-import { Button } from 'reactstrap';
-import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
-        <Navigator />
-        <img src={ logo } style={{ height: "200px", width: "300px", display: "block", marginLeft: "auto", marginRight: "auto"}}/>
-        <MainArea />
+        <DataProvider endpoint="api/lead/" render={data => <Table data={data} />} />
       </div>
     );
   }
