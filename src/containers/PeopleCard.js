@@ -11,11 +11,10 @@ class PeopleCard extends Component {
   	return (
       <div>
         <Card>
-        <CardImg top width="100%" src={ this.props.person.imagesrc } style={{ height: "180px" }}/>
         <CardBody>
           <CardTitle>{ this.props.person.name }</CardTitle>
-          <CardSubtitle>{ this.props.person.company }</CardSubtitle>
-          <CardText>{ this.props.person.description }</CardText>
+          <CardSubtitle>{ this.props.person.email }</CardSubtitle>
+          <CardText>{ this.props.person.message }</CardText>
           <Button>Button</Button>
         </CardBody>
       </Card>
@@ -25,3 +24,4 @@ class PeopleCard extends Component {
 }
 
 export default PeopleCard ;
+

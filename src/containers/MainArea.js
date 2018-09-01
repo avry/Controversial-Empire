@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import PeopleCard from './PeopleCard';
-import './MainArea.css'
+import './MainArea.css';
+import * as api from '../api';
 
 import universe from '../images/universe.jpg';
 import cinema from '../images/cinema.jpg';
@@ -45,11 +46,34 @@ class MainArea extends Component {
 					company: "WSir Dingaling-ling",
 					description: "Making the little things matter"
 				}
-			]
+			],
+			data: []
 		}
 	}
+
+
+
+
+   componentDidMount() {
+      fetch(this.props.endpoint)
+       .then(response => {
+         if (response.status !== 200) {
+           return this.setState({ placeholder: "Something went wrong" });
+         }
+         return response.json();
+       })
+       .then(data => this.setState({ data: data }));
+    }
+
+
+
+
+
+
+
 	render () {
-		let peopleCards = this.state.people.map(person => {
+		console.log(this.state.data)
+		let peopleCards = this.state.data.map(person => {
 			return (
 				<Col sm="4" className="individual-cards">
 					<PeopleCard person={person} />
