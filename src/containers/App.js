@@ -9,13 +9,30 @@ import { Button } from 'reactstrap';
 import './App.css';
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      currPage: ""
+    };
+  }
+  componentDidMount() {
+
+  }
+  componentWillUnmount() {
+
+  }
+  setCurrentPage = (page) => {
+    if (this.state.currPage) {
+      this.setState({
+        currentPage: page
+      })
+    };
+  }
   render() {
     return (
       <div className="App">
-        <Header />
-        <Navigator />
-        <img src={ logo } style={{ height: "200px", width: "300px", display: "block", marginLeft: "auto", marginRight: "auto"}}/>
-        <MainArea endpoint="api/lead/" />
+        <Header currPage={this.state.currPage}/>
+        <MainArea endpoint="api/lead/" currPage={this.state.currPage}/>
       </div>
     );
   }

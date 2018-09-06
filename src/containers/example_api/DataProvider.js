@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from "react";
 
-
+//endpoint="api/lead/" render={data => <Table data={data}
 class DataProvider extends Component {
 
   state = {

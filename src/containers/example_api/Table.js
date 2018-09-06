@@ -13,7 +13,7 @@ const Table = ({ data }) =>
       <table className="table is-striped">
         <thead>
           <tr>
-            {Object.entries(data[0]).map(el => <th key={key(el)}>{el[0]}</th>)}
+            { )}
           </tr>
         </thead>
         <tbody>
