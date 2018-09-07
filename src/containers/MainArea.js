@@ -50,11 +50,7 @@ class MainArea extends Component {
 			data: []
 		}
 	}
-
-
-
-
-   componentDidMount() {
+	componentDidMount() {
       fetch(this.props.endpoint)
        .then(response => {
          if (response.status !== 200) {
@@ -64,13 +60,6 @@ class MainArea extends Component {
        })
        .then(data => this.setState({ data: data }));
     }
-
-
-
-
-
-
-
 	render () {
 		console.log(this.state.data)
 		let peopleCards = this.state.data.map(person => {
@@ -113,6 +102,4 @@ class MainArea extends Component {
 		)
 	}
 }
-
-
 export default MainArea;

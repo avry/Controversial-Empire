@@ -31,7 +31,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header currPage={this.state.currPage}/>
+        <Header currPage={this.state.currPage}/> 
         <MainArea endpoint="api/lead/" currPage={this.state.currPage}/>
       </div>
     );

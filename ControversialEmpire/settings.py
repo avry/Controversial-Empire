@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['thawing-falls-27845.herokuapp.com','controversial-empire.com',
 INSTALLED_APPS = [
     'StableOutline',
     'rest_framework',
+    'webpack-loader', 
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -57,7 +58,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'build')
+            os.path.join(BASE_DIR, 'templates')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -74,9 +75,16 @@ TEMPLATES = [
 WSGI_APPLICATION = 'ControversialEmpire.wsgi.application'
 
 
+WEBPACK_LOADER = {
+    'DEFAULT': {
+            'BUNDLE_DIR_NAME': 'bundles/',
+            'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.dev.json'),
+        }
+}
+
+
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',

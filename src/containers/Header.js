@@ -11,13 +11,13 @@ class Header extends Component {
   	return (
       <Container fluid>
         <Row>
-          <col></col>
+          <Col></Col>
           <Col>
             <div>
               <Slider />
             </div>
           </Col>
-          <col></col>
+          <Col></Col>
         </Row>
       </Container> 
     );
