@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Navigator from './Nav';
 import MainArea from './MainArea';
 import Header from './Header';
+import PropTypes from 'prop-types';
 
 import model3 from '../images/model3.jpg';
 import logo from '../images/logo.png';
