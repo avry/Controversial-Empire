@@ -33,7 +33,6 @@ ALLOWED_HOSTS = ['thawing-falls-27845.herokuapp.com','controversial-empire.com',
 INSTALLED_APPS = [
     'StableOutline',
     'rest_framework',
-    'webpack-loader', 
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -75,12 +74,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'ControversialEmpire.wsgi.application'
 
 
-WEBPACK_LOADER = {
-    'DEFAULT': {
-            'BUNDLE_DIR_NAME': 'bundles/',
-            'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.dev.json'),
-        }
-}
 
 
 # Database
