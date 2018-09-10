@@ -13,7 +13,7 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      currPage: ""
+      currPage: "so here I am"
     };
   }
   componentDidMount() {
