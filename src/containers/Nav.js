@@ -1,43 +1,47 @@
 import React from 'react';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import { Link } from 'react-router-dom';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem } from 'reactstrap';
 
 export default class Navigator extends React.Component {
   constructor(props) {
     super(props);
 
-    this.toggleNavbar = this.toggleNavbar.bind(this);
+    this.toggle = this.toggle.bind(this);
     this.state = {
-      collapsed: true
+      isOpen: false
     };
   }
-
-  toggleNavbar() {
+  toggle() {
     this.setState({
-      collapsed: !this.state.collapsed
+      isOpen: !this.state.isOpen
     });
   }
   render() {
     return (
       <div>
-        <Navbar color="light" light>
-          <NavbarBrand href="/" className="mr-auto">Controversial Empire</NavbarBrand>
-          <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-          <Collapse isOpen={!this.state.collapsed} navbar>
-            <Nav navbar>
+        <Navbar color="light" light expand="md">
+          <NavbarBrand><Link to='/'>Home</Link>                                           </NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/components/">Home</NavLink>
+                <NavLink>
+                  <Link to='/projects'>Projects</Link>
+                </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/components/">About Us</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/components/">Products</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/components/">Contact Us</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+                <NavLink href="https://github.com/avry">GitHub</NavLink>
               </NavItem>
             </Nav>
           </Collapse>

@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['thawing-falls-27845.herokuapp.com','controversial-empire.com',
 # Application definition
 
 INSTALLED_APPS = [
+    'djangorouter',
     'StableOutline',
     'rest_framework',
     'django.contrib.admin',

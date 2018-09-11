@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import Slider from './Carousel';
 import { Container, Row, Col } from 'reactstrap';
 import PropTypes from 'prop-types';
 
+import Slider from './Carousel';
+import Navigator from './Nav';
 
 
 class Header extends Component {
@@ -22,6 +23,7 @@ class Header extends Component {
           </Col>
           <Col></Col>
         </Row>
+        <Navigator/>
       </Container> 
     );
   };

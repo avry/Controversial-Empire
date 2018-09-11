@@ -15,38 +15,6 @@ class MainArea extends Component {
 	constructor() {
 		super();
 		this.state = {
-			people: [
-				{
-					imagesrc: pinkskies,
-					name: "Mooder and the infinite possibilities",
-					company: "Theresa Lo",
-					description: "An intensive review in the field"
-				},
-				{
-					imagesrc: bridge,
-					name: "5 tips for using Mooder",
-					company: "Aaron Tan",
-					description: "An in-depth exploration of best practises "
-				},
-				{
-					imagesrc: universe,
-					name: "Year end sale!",
-					company: "Witness Me",
-					description: "Special promotion runs until end of August"
-				},
-				{
-					imagesrc: bigrock,
-					name: "What a new wave in black label society means",
-					company: "WSir Dingaling-ling",
-					description: "Making the little things matter"
-				},
-				{
-					imagesrc: cinema,
-					name: "What a new wave in black label society means",
-					company: "WSir Dingaling-ling",
-					description: "Making the little things matter"
-				}
-			],
 			data: []
 		}
 	}
@@ -61,7 +29,7 @@ class MainArea extends Component {
        .then(data => this.setState({ data: data }));
     }
 	render () {
-		console.log(this.state.data)
+		console.log("so far at least this is working ")
 		let peopleCards = this.state.data.map(person => {
 			return (
 				<Col sm="4" className="individual-cards">

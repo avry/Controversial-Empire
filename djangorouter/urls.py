@@ -1,5 +1,5 @@
 from django.urls import path
-from StableOutline.api import views
+from djangorouter.api import views
 
 
 
