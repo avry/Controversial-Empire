@@ -32,9 +32,12 @@ class MainArea extends Component {
 		console.log("so far at least this is working ")
 		let peopleCards = this.state.data.map(person => {
 			return (
-				<Col sm="4" className="individual-cards">
-					<PeopleCard person={person} />
-				</Col>
+				<div>
+					<h2>Projects Pages!</h2>
+					<Col sm="4" className="individual-cards">
+						<PeopleCard person={person} />
+					</Col>
+				</div>
 			)
 		})
 		return (
