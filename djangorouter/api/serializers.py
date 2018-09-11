@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from StableOutline.models import Person
+from djangorouter.models import Project
 
 class LeadSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Person
-        fields = ('id', 'name', 'email', 'message')
+        model = Project
+        fields = ('name', 'github', 'description', 'created_at')

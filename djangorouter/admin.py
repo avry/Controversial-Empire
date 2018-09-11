@@ -1,7 +1,7 @@
 from django.contrib import admin
-from djangorouter.models import Projects
+from djangorouter.models import Project
 
 # Register your models here.
 
 
-admin.site.register(Projects)
+admin.site.register(Project)
