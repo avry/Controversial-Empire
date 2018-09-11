@@ -9,7 +9,7 @@ const Home = () => (
 	  	<Row>
 	  		<img src={SillyHat} alt="Profile Pict" style={{ height: "40px", width:"20px" }} />
 	  	</Row>
-    	<h2>Home</h2>
+    	<h2>Build home page here</h2>
     </Container>
   </div>
 )

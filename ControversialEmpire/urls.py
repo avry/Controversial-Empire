@@ -28,9 +28,10 @@ urlpatterns = [
   path('admin/', admin.site.urls),
   # path('api/', include('StableOutline.urls')),
   path('googlee928d1f5ff907fe2.html', views.google),
-  path('', TemplateView.as_view(template_name='index.html')),
+  # path('', TemplateView.as_view(template_name='index.html')),
   path('api/', include('StableOutline.urls')),
   path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+  re_path('.*', TemplateView.as_view(template_name='index.html')),
 
 
 ]
