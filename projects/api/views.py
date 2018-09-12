@@ -4,7 +4,7 @@ from django.http import HttpResponse
 # Create your views here.
 from rest_framework import generics
 from .serializers import LeadSerializer
-from StableOutline.models import Person
+from projects.models import Project
 
 def google(request):
     html = "google-site-verification: googlee928d1f5ff907fe2.html" 
@@ -12,5 +12,5 @@ def google(request):
 
 
 class LeadListCreate(generics.ListCreateAPIView):
-    queryset = Person.objects.all()
+    queryset = Project.objects.all()
     serializer_class = LeadSerializer

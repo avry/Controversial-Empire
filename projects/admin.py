@@ -1,5 +1,5 @@
 from django.contrib import admin
-from djangorouter.models import Project
+from projects.models import Project
 
 # Register your models here.
 

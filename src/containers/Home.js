@@ -7,7 +7,12 @@ const Home = () => (
   <div>
   	<Container fluid>
 	  	<Row>
-	  		<img src={SillyHat} alt="Profile Pict" style={{ height: "40px", width:"20px" }} />
+	  		<Col></Col>
+	  		<Col>
+	  			<img src={SillyHat} alt="Profile Pict" style={{ height: "300px", width:"200px" }} />
+	  		</Col>
+	  		<Col>
+	  		</Col>
 	  	</Row>
     	<h2>Build home page here</h2>
     </Container>

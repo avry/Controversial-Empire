@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from djangorouter.models import Project
+from projects.models import Project
 
 class LeadSerializer(serializers.ModelSerializer):
     class Meta:
