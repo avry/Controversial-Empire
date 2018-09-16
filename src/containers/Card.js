@@ -3,7 +3,7 @@ import walterdale from '../images/article1.jpg';
 import { Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button } from 'reactstrap';
 
-class PeopleCard extends Component {
+class GenericCard extends Component {
   constructor(props) {
   	super(props);
   }
@@ -23,5 +23,5 @@ class PeopleCard extends Component {
   };
 }
 
-export default PeopleCard ;
+export default GenericCard ;
 

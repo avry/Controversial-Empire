@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import PeopleCard from './PeopleCard';
+import GenericCard from './Card';
 import './ProjectsList.css';
 import * as api from '../api';
 
@@ -12,11 +12,12 @@ import pinkskies from '../images/pinkskies.jpg';
 
 
 class ProjectsList extends Component {
-	constructor() {
-		super();
+	constructor(props){
+		super(props);
 		this.state = {
-			data: []
-		}
+			data: [
+				]
+		};
 	}
 	componentDidMount() {
       fetch(this.props.endpoint)
@@ -29,13 +30,15 @@ class ProjectsList extends Component {
        .then(data => this.setState({ data: data }));
     }
 	render () {
-		console.log("so far at least this is working ")
-		let ProjectCards = this.state.data.map(person => {
+		console.log("r3endering ProjectList!");
+		console.log(this.state.data);
+		console.log("data arrived");
+
+		let ProjectCards = this.state.data.map(proj => {
 			return (
-				<div>
-					<h5>Previous Coursework and Personal Projects </h5>
-					<Col sm="4" className="individual-cards">
-						<PeopleCard person={person} />
+				<div key={"..."}>
+					<Col md="4" className="individual-cards">
+						<GenericCard person={proj} />
 					</Col>
 				</div>
 			)
@@ -44,7 +47,7 @@ class ProjectsList extends Component {
 			<Container fluid>
 				<Row>
 					<div className="about-text">
-						
+						<h5>Previous Coursework and Personal Projects </h5>
 					</div>
 				</Row>
 				<div className="cards-list">

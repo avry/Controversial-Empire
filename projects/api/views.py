@@ -3,7 +3,7 @@ from django.http import HttpResponse
 
 # Create your views here.
 from rest_framework import generics
-from .serializers import LeadSerializer
+from .serializers import ProjectSerializer
 from projects.models import Project
 
 def google(request):
@@ -11,6 +11,6 @@ def google(request):
     return HttpResponse(html)
 
 
-class LeadListCreate(generics.ListCreateAPIView):
+class ProjectListRetrieve(generics.ListCreateAPIView):
     queryset = Project.objects.all()
-    serializer_class = LeadSerializer
+    serializer_class = ProjectSerializer
