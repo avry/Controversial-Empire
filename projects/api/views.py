@@ -14,3 +14,8 @@ def google(request):
 class ProjectListRetrieve(generics.ListCreateAPIView):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
+
+
+class ProjectRetrieve(generics.ListCreateAPIView):
+	queryset = Project.objects.all()
+	serializer_class = ProjectSerializer
