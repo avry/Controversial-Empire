@@ -31,7 +31,8 @@ class Main extends Component {
 				currentProjId: projId,
 				projects: {
 					...this.state.projects,
-				}
+					[proj.slug]: proj
+				}				
 			});
 		});
 	};
@@ -43,7 +44,7 @@ class Main extends Component {
 					<Route exact path='/' component={Home} />
 
 					<Route exact path='/projects' render={() => <ProjectsList 
-																	onContestClick={this.fetchProj}
+																	onProjectClick={this.fetchProj}
 																	projects={this.state.projects}
 																	endpoint='api/projectslist/'
 																/>

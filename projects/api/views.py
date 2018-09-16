@@ -17,5 +17,13 @@ class ProjectListRetrieve(generics.ListCreateAPIView):
 
 
 class ProjectRetrieve(generics.ListCreateAPIView):
-	queryset = Project.objects.all()
 	serializer_class = ProjectSerializer
+
+	def get_queryset(self):
+		"""
+		This view should return a project when the user clicks on 
+		the corresponding button on the ProjectListView.
+		"""
+		slug = self.kwargs['slug']
+
+		return Project.objects.filter(slug=slug)

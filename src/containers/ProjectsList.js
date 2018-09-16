@@ -15,8 +15,7 @@ class ProjectsList extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			data: [
-				]
+			data: []
 		};
 	}
 	componentDidMount() {
@@ -34,12 +33,16 @@ class ProjectsList extends Component {
 		console.log(this.state.data);
 		console.log("data arrived");
 
+
 		let ProjectCards = this.state.data.map(proj => {
 			return (
-				<div key={"..."}>
-					<Col md="4" className="individual-cards">
-						<GenericCard person={proj} />
-					</Col>
+				<div className="col-md-4 offset-md-3">
+					<div className="individual-cards">
+						<GenericCard
+							key={proj.slug} 
+							onClick={this.props.onProjectClick}
+							project={proj} />
+					</div>
 				</div>
 			)
 		})

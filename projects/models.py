@@ -20,6 +20,7 @@ class Project(models.Model):
 		return(self.name)
 
 
+
 #slug generation
 DONT_USE = ['create']
 def random_string_generator(size=10, chars=string.ascii_lowercase + string.digits):
