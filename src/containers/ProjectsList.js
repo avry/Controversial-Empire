@@ -29,10 +29,6 @@ class ProjectsList extends Component {
        .then(data => this.setState({ data: data }));
     }
 	render () {
-		console.log("r3endering ProjectList!");
-		console.log(this.state.data);
-		console.log("data arrived");
-
 
 		let ProjectCards = this.state.data.map(proj => {
 			return (

@@ -12,7 +12,7 @@ class Main extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			projects: "It's a wario!"
+			projects: {}
 		};
 	}
 	componentDidMount() {
@@ -29,11 +29,10 @@ class Main extends Component {
 		api.fetchProj(projId).then(proj => {
 			this.setState({
 				currentProjId: projId,
-				projects: {
-					...this.state.projects,
-					[proj.slug]: proj
-				}				
+				projects: proj	
 			});
+			console.log('Main.js state.currentProjId: ' + this.state.currentProjId);
+			console.log('Main.js state.projects: ' + this.state.projects);
 		});
 	};
 	render() {

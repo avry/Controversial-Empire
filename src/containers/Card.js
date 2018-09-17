@@ -8,9 +8,7 @@ class GenericCard extends Component {
   	super(props);
   }
   handleClick = () => {
-    console.log('1curr value of slug');
-    console.log(this.props.project.slug);
-    console.log('2curr value of slug');
+    console.log('value of slug in Card.js is ' + this.props.project.slug);
     this.props.onClick(this.props.project.slug);
   }
   render () {
