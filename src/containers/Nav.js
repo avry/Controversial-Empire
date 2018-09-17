@@ -37,11 +37,11 @@ export default class Navigator extends React.Component {
             <Nav className="ml-auto" navbar>
               <NavItem>
                 <NavLink>
-                  <Link to='/projects'>Projects</Link>
+                  <Link to='/projects/'>Projects</Link>
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/avry">GitHub</NavLink>
+                <NavLink href="https://github.com/avry/">GitHub</NavLink>
               </NavItem>
             </Nav>
           </Collapse>
