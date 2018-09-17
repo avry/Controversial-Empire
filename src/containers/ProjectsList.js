@@ -11,6 +11,7 @@ import bridge from '../images/bridge.jpg';
 import pinkskies from '../images/pinkskies.jpg';
 
 
+//the Project list must be accesed from the main home page. could be something we can fix 
 class ProjectsList extends Component {
 	constructor(props){
 		super(props);
@@ -19,29 +20,28 @@ class ProjectsList extends Component {
 		};
 	}
 	componentDidMount() {
-      fetch(this.props.endpoint)
-       .then(response => {
-         if (response.status !== 200) {
-           return this.setState({ placeholder: "Something went wrong" });
-         }
-         return response.json();
-       })
-       .then(data => this.setState({ data: data }));
+
     }
 	render () {
+		console.log(this.props.projects);
+		let  ProjectCards = "";
+		if (this.props.projects) {
+			ProjectCards = this.props.projects.map(proj => {
+				return (
+					<Row>
+						<div className="col-md-4 offset-md-3">
+							<div className="individual-cards">
+								<GenericCard
+									key={proj.slug} 
+									onClick={this.props.onProjectClick}
+									project={proj} />
+							</div>
+						</div>
+					</Row>
+				)
+			})
+		}
 
-		let ProjectCards = this.state.data.map(proj => {
-			return (
-				<div className="col-md-4 offset-md-3">
-					<div className="individual-cards">
-						<GenericCard
-							key={proj.slug} 
-							onClick={this.props.onProjectClick}
-							project={proj} />
-					</div>
-				</div>
-			)
-		})
 		return (
 			<Container fluid>
 				<Row>
@@ -50,9 +50,9 @@ class ProjectsList extends Component {
 					</div>
 				</Row>
 				<div className="cards-list">
-					<Row>
-						{ProjectCards}
-					</Row>
+
+					{ProjectCards}
+					
 				</div>
 			</Container>
 		)

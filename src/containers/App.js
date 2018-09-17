@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import Header from './Header';
 import Main from './Main';
+import * as api from '../api';
+
 
 
 class App extends Component {
@@ -11,6 +13,11 @@ class App extends Component {
 		this.state = {
 
 		};
+		api.fetchProjList().then(projects => {
+			this.setState({
+				projects: projects,
+			});
+		});
 	}
 	componentDidMount() {
 
@@ -23,7 +30,7 @@ class App extends Component {
 			//some JSX expressions
 			<div className="App">
 				<Header />
-				<Main />
+				<Main projects={this.state.projects}/>
 			</div>
 		)
 	}

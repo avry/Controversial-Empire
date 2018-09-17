@@ -6,17 +6,17 @@ import ProjectsList from './ProjectsList';
 import Home from './Home';
 import * as api from '../api';
 
+//Proptypes needed: projects which is an array
 
 
 class Main extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			projects: {}
+			currentProjId: null
 		};
 	}
 	componentDidMount() {
-
 	}
 	componentWillUnmount() {
 
@@ -29,10 +29,8 @@ class Main extends Component {
 		api.fetchProj(projId).then(proj => {
 			this.setState({
 				currentProjId: projId,
-				projects: proj	
-			});
-			console.log('Main.js state.currentProjId: ' + this.state.currentProjId);
-			console.log('Main.js state.projects: ' + this.state.projects);
+				currProjects: proj	
+			});	
 		});
 	};
 	render() {
@@ -42,17 +40,16 @@ class Main extends Component {
 				<Switch>
 					<Route exact path='/' component={Home} />
 
-					<Route exact path='/projects' render={() => <ProjectsList 
+					<Route exact path='/projects/' render={() => <ProjectsList 
 																	onProjectClick={this.fetchProj}
-																	projects={this.state.projects}
-																	endpoint='api/projectslist/'
+																	projects={this.props.projects}
 																/>
 															} 
 					/>
 
 
 
-					<Route path='/projects/:projId' render={() => <p>this is a detail</p>} />
+					<Route path='/projects/:projId/' render={() => <p>this is a detail</p>} />
 					
 				</Switch>
 			</div>
