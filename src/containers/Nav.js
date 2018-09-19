@@ -30,8 +30,8 @@ export default class Navigator extends React.Component {
   render() {
     return (
       <div>
-        <Navbar color="light" light expand="md">
-          <NavbarBrand><Link to='/'>Home</Link>                                           </NavbarBrand>
+        <Navbar color="light" light expand="sm" >
+          <NavbarBrand><Link to='/'>Home</Link></NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import Header from './Header';
 import Main from './Main';
+import Footer from './Footer';
 import * as api from '../api';
 
 
@@ -28,9 +29,12 @@ class App extends Component {
 	render() {
 		return (
 			//some JSX expressions
-			<div className="App">
-				<Header />
-				<Main projects={this.state.projects}/>
+			<div>
+				<div className="App">
+					<Header />
+					<Main projects={this.state.projects}/>
+				</div>
+				<Footer />
 			</div>
 		)
 	}

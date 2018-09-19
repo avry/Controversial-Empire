@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import Slider from './Carousel';
 import Navigator from './Nav';
+import './Header.css'
 
 
 class Header extends Component {
@@ -13,17 +14,19 @@ class Header extends Component {
   render () {
   	return (
       <Container fluid>
-        <Row>
-          <Col></Col>
-          <Col>
-            <div>
-              <Slider />
-              <p>{ this.props.currPage }</p>
-            </div>
-          </Col>
-          <Col></Col>
-        </Row>
-        <Navigator/>
+        <div className="header-stuff">
+          <Row>
+            <Col></Col>
+            <Col>
+              <div>
+                <Slider />
+                <p>{ this.props.currPage }</p>
+              </div>
+            </Col>
+            <Col></Col>
+          </Row>
+          <Navigator/>
+        </div>
       </Container> 
     );
   };

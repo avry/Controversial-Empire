@@ -54,19 +54,12 @@ class Main extends Component {
 
 					<Route exact path='/projects/' render={() => <ProjectsList 
 																	onProjectClick={this.fetchProj}
-																	projects={this.props.projects}
-																/>
-															} 
-					/>
-
-
-
+																	projects={this.props.projects} /> 
+															} />
 					<Route path='/projects/:projId/' render={() => <ProjectDetail 
 																		currentProjId={this.state.currentProjId} 
-																		currentProject={this.state.currProject} 
-																	/>
-															}
-					/>
+																		currentProject={this.state.currProject} />
+															} />
 				</Switch>
 			</div>
 		)

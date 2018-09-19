@@ -29,7 +29,7 @@ class ProjectsList extends Component {
 			ProjectCards = this.props.projects.map(proj => {
 				return (
 					<Row>
-						<div className="col-md-4 offset-md-3">
+						<div className="card-row">
 							<div className="individual-cards">
 								<GenericCard
 									key={proj.slug} 

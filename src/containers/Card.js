@@ -30,5 +30,5 @@ class GenericCard extends Component {
   };
 }
 
-export default GenericCard ;
+export default GenericCard;
 
