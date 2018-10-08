@@ -6,8 +6,6 @@ import './Home.css';
 
 
 //<img src={''} alt="Profile Pict" style={{ height: "300px", width:"200px" , paddingLeft:"20px" , paddingTop: "20px", paddingRight:"10px" , paddingBottom: "10px", float:"left" }} />
-
-
 const Home = () => (
   <div>
   	<Container fluid>

@@ -4,14 +4,16 @@ from django.utils.text import slugify
 import random
 import string
 
-# Create your models here.
+'''
+The Project model stores relevant information for each project
+such as name, github url etc...
+'''
 class Project(models.Model):
 	name = models.CharField(max_length=100)
 	github = models.CharField(max_length=100)
 	description = models.TextField()
 	created_at = models.DateTimeField(auto_now_add=True)
 	slug = models.SlugField(null=True, blank=True)
-
 
 	class Meta:
 		ordering = ('created_at',)
@@ -20,11 +22,12 @@ class Project(models.Model):
 		return(self.name)
 
 
-
-#slug generation
+#slug generation pulled from https://github.com/codingforentrepreneurs/try-django-19
+#used for better url generation.
 DONT_USE = ['create']
 def random_string_generator(size=10, chars=string.ascii_lowercase + string.digits):
 	return ''.join(random.choice(chars) for _ in range(size))
+
 def unique_slug_generator(instance, new_slug=None):
 	"""
 	This is for a Django project and assues your instance
@@ -51,18 +54,14 @@ def unique_slug_generator(instance, new_slug=None):
 	return slug
 
 
-
-
-
-
+#Users can specify a slug name during Project creation but if no
+#slug name is specified, auto generate one before the Project
+#is saved.
 def rl_pre_save_receiver(sender, instance, *args, **kwargs):
 	print('saving...')
 	print(instance.created_at)
 	if not instance.slug:
 		instance.slug = unique_slug_generator(instance)
-
-
-
 
 pre_save.connect(rl_pre_save_receiver, sender=Project)
 
